@@ -8,8 +8,8 @@ public class ArrayLoop {
             numbers[i] = i * 2 + 3;
         }
 
-        for (int n = 0; n < numbers.length; n++) {
-            System.out.println("Значение " + n + " элемента равно: " + numbers[n]);
+        for (int number : numbers) {
+            System.out.println("Значение элемента равно: " + number);
         }
     }
 }
