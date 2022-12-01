@@ -9,7 +9,6 @@ public class TrgArea {
     public static void main(String[] args) {
         double rsl = TrgArea.area(2, 2, 2);
         double rsl1 = TrgArea.area(9, 9, 10);
-
         System.out.println("area (9, 9, 10) = " + rsl1);
         System.out.println("area (2, 2, 2) = " + rsl);
     }
