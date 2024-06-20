@@ -6,34 +6,42 @@ import org.junit.Test;
 public class FitTest {
 
     @Test
-    public void whenMan180Then92() {
-        short in = 180;
-        double expected = 92;
-        double out = Fit.manWeight(in);
-        Assert.assertEquals(expected, out, 0.01);
+    public void whenManHeightIs187ThenWeightIs100Dot05() {
+        double height = 187;
+        double expected = 100.05;
+        double actual = Fit.manWeight(height);
+        Assert.assertEquals(expected, actual, 0.01);
     }
 
     @Test
-    public void whenMan170Then80Dot5() {
-        short in = 170;
-        double expected = 80.5;
-        double out = Fit.manWeight(in);
-        Assert.assertEquals(expected, out, 0.01);
+    public void whenWomanHeightIs187ThenWeightIs88Dot55() {
+        double height = 187;
+        double expected = 88.55;
+        double actual = Fit.womanWeight(height);
+        Assert.assertEquals(expected, actual, 0.01);
     }
 
     @Test
-    public void whenWoman165Then63Dot24() {
-        short in = 165;
-        double expected = 63.24;
-        double out = Fit.womanWeight(in);
-        Assert.assertEquals(expected, out, 0.01);
+    public void whenHeightIsZeroThenThrowIllegalArgumentExceptionForMan() {
+        double height = 0;
+        Assert.assertThrows(IllegalArgumentException.class, () -> Fit.manWeight(height));
     }
 
     @Test
-    public void whenWoman170Then69() {
-        short in = 170;
-        double expected = 69;
-        double out = Fit.womanWeight(in);
-        Assert.assertEquals(expected, out, 0.01);
+    public void whenHeightIsZeroThenThrowIllegalArgumentExceptionForWoman() {
+        double height = 0;
+        Assert.assertThrows(IllegalArgumentException.class, () -> Fit.womanWeight(height));
+    }
+
+    @Test
+    public void whenHeightIsNegativeThenThrowIllegalArgumentExceptionForMan() {
+        double height = -150;
+        Assert.assertThrows(IllegalArgumentException.class, () -> Fit.manWeight(height));
+    }
+
+    @Test
+    public void whenHeightIsNegativeThenThrowIllegalArgumentExceptionForWoman() {
+        double height = -150;
+        Assert.assertThrows(IllegalArgumentException.class, () -> Fit.womanWeight(height));
     }
 }
