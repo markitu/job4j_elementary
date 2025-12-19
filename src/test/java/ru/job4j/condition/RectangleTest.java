@@ -33,17 +33,13 @@ class RectangleTest {
         assertThat(output).isEqualTo(expected, withPrecision(0.01));
     }
 
-
     @Test
     void whenLength1Point5AndWidth2Point5ThenCorrectDiagonal() {
         double length = 1.5;
         double width = 2.5;
-        double expected = Math.sqrt(Math.pow(length, 2)+ Math.pow(width, 2));
-
+        double expected = Math.sqrt(Math.pow(length, 2) + Math.pow(width, 2));
         double output = Rectangle.diagonal(length, width);
-
         assertThat(output).isEqualTo(expected, withPrecision(0.01));
     }
-
 
 }
